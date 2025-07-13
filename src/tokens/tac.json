@@ -107,15 +107,15 @@
     },
     {
       "chainId": 239,
-      "address": "0xCa6328a3Dac228CA16181dEf8811170792D659D8",
+      "address": "0x7048c9e4aBD0cf0219E95a17A8C6908dfC4f0Ee4",
       "symbol": "cbBTC",
       "name": "Coinbase Wrapped BTC",
-      "decimals": 6,
+      "decimals": 8,
       "logoURI": "https://assets.coingecko.com/coins/images/40143/large/cbbtc.webp?1726136727",
       "tags": ["btc","tac-lz-bridged"],
       "extensions": {
-        "jetton": "EQDQOgtfgF6mjuEcxMjNdmP34JDe-jsIWXU0IAIhIyxBRnJ4",
-        "oftAdapterETH": "0xaA7Ed74237D1B5D2fe2fd7bf1d858bed9AB96830"
+        "jetton": "EQDhyPzbIjJT_WnY3gGprjSYUK9fiGMjWMezxO8MZiUdfb_B",
+        "oftAdapterETH": "0x59Ea2825d8Ad7D60cC6Aa77FFbDD0E89c0fBF539"
       }
     },
     {
@@ -264,14 +264,14 @@
     },
     {
       "chainId": 239,
-      "address": "0x08B8125aD72da5F6Cd6d6Af66360Ac08f5b78a48",
+      "address": "0xe82dbD543FD729418613d68Cd1E8FC67b0f46E31",
       "symbol": "M-BTC",
       "name": "Merlin's Seal BTC",
       "decimals": 18,
       "logoURI": "https://assets.coingecko.com/coins/images/36566/large/photo_2024-03-25_22-04-42.jpg?1711936162",
       "tags": ["tac-lz-bridged", "btc"],
       "extensions": {
-        "jetton": "EQCnYCNeUCKm066zIFCJKJHNeoonMtuNzaffL04XzGXkkHmE"
+        "jetton": "EQB7UZz_r1mBLZ_DwaHy-hDgKUFQbc_R6cVpignE4Efes5-R"
       }
     }
   ]
