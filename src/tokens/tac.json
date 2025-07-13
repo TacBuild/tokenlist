@@ -1,0 +1,278 @@
+{
+  "$schema": "../../schemas/tokens.schema.json",
+  "name": "TAC Mainnet Canonical Token List",
+  "logoURI": "https://res.cloudinary.com/dqz8o8js4/image/upload/v1752369223/tac-logo-vertical-ethereallight-violetspell_1_ddpkev.png",
+  "tags": {
+    "stablecoin": {
+      "name": "Stablecoin",
+      "description": "Tokens that are fixed to an external asset, e.g. the US dollar or derivatives of it."
+    },
+    "btc": {
+      "name": "Bitcoin Based",
+      "description": "Bitcoin derivatives or wrapped versions."
+    },
+    "eth": {
+      "name": "$ETH Based",
+      "description": "$ETH derivatives or wrapped versions."
+    },
+    "ton": {
+      "name": "TON Based",
+      "description": "TON derivatives or wrapped versions."
+    },
+    "yieldbearing": {
+      "name": "Yield Bearing",
+      "description": "Tokens that bear a form of yield"
+    },
+    "ton-native": {
+      "name": "TON Native",
+      "description": "Tokens that are native to TON and wrapped into erc20"
+    },
+    "tac-native": {
+      "name": "TAC Native",
+      "description": "Tokens that are native to TAC and mirrored on TON as wrapped Jettons"
+    },
+    "tac-lz-bridged": {
+      "name": "TAC LayerZero Bridged",
+      "description": "Tokens that are native to other chains, bridged to TAC with LayerZero as OFTs, and are mirrored on TON as wrapped Jettons"
+    },
+    "tac-agg-bridged": {
+      "name": "TAC AggLayer Bridged",
+      "description": "Tokens that are native to other chains, bridged to TAC with AggLayer, and are mirrored on TON as wrapped Jettons"
+    },
+    "tac-hl-bridged": {
+      "name": "TAC HyperLane Bridged",
+      "description": "Tokens that are native to other chains, bridged to TAC with HyperLane, and are mirrored on TON as wrapped Jettons"
+    }
+  },
+  "tokens": [
+    {
+      "chainId": 239,
+      "address": "0x0000000000000000000000000000000000000000",
+      "symbol": "TAC",
+      "name": "TAC Token",
+      "decimals": 18,
+      "logoURI": "https://res.cloudinary.com/dqz8o8js4/image/upload/v1752369223/Copy_of_TAC-logo-symbol-purple_xx17mf.png",
+      "tags": ["tac-native", "yieldbearing"],
+      "extensions": {
+        "jetton": "EQBE_gBrU3mPI9hHjlJoR_kYyrhQgyCFD6EUWfa42W8T7EBP",
+        "oftAdapterBSC": "0x1219c409faBe2C27Bd0D1A565daeed9Bd9f271dE"
+      }
+    },
+    {
+      "chainId": 239,
+      "address": "0xB63B9f0eb4A6E6f191529D71d4D88cc8900Df2C9",
+      "symbol": "WTAC",
+      "name": "Wrapped TAC",
+      "decimals": 18,
+      "logoURI": "https://res.cloudinary.com/dqz8o8js4/image/upload/v1752369223/Copy_of_TAC-logo-symbol-purple_xx17mf.png",
+      "tags": ["tac-native", "yieldbearing"],
+      "extensions": {
+        "jetton": "EQCXZSXYW1iUldSjo7OInor3-WD1cXzLQdhKocq_fI5fh_BR"
+      }
+    },
+    {
+      "chainId": 239,
+      "address": "0xb76d91340F5CE3577f0a056D29f6e3Eb4E88B140",
+      "symbol": "TON",
+      "name": "TON Token",
+      "decimals": 9,
+      "logoURI": "https://assets.coingecko.com/coins/images/17980/large/photo_2024-09-10_17.09.00.jpeg?1725963446",
+      "tags": ["ton-native", "yieldbearing"]
+    },
+    {
+      "chainId": 239,
+      "address": "0x61D66bC21fED820938021B06e9b2291f3FB91945",
+      "symbol": "WETH",
+      "name": "Wrapped Ether",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/279/large/ethereum.png?1696501628",
+      "tags": ["eth","tac-lz-bridged"],
+      "extensions": {
+        "jetton": "EQBTkLAhEteZCRgRe_xMs5ZE0bMrduYxKbyzGCpXXW8dRWOT",
+        "oftAdapterETH": "0xf211D3B40A74632162F45F4d42A461b663694a9D"
+      }
+    },
+    {
+      "chainId": 239,
+      "address": "0xAf368c91793CB22739386DFCbBb2F1A9e4bCBeBf",
+      "symbol": "wstETH",
+      "name": "Wrapped liquid staked Ether 2.0",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/18834/large/wstETH.png?1696518295",
+      "tags": ["eth","tac-lz-bridged", "yieldbearing"],
+      "extensions": {
+        "jetton": "EQCrLRrwzV1gdV466gQpRXgGukNik3VExFg955ncWQiFN_f5",
+        "oftAdapterETH": "0x6ceA302B297bB8C49E56d04cC080480822795848"
+      }
+    },
+    {
+      "chainId": 239,
+      "address": "0xCa6328a3Dac228CA16181dEf8811170792D659D8",
+      "symbol": "cbBTC",
+      "name": "Coinbase Wrapped BTC",
+      "decimals": 6,
+      "logoURI": "https://assets.coingecko.com/coins/images/40143/large/cbbtc.webp?1726136727",
+      "tags": ["btc","tac-lz-bridged"],
+      "extensions": {
+        "jetton": "EQDQOgtfgF6mjuEcxMjNdmP34JDe-jsIWXU0IAIhIyxBRnJ4",
+        "oftAdapterETH": "0xaA7Ed74237D1B5D2fe2fd7bf1d858bed9AB96830"
+      }
+    },
+    {
+      "chainId": 239,
+      "address": "0xAF988C3f7CB2AceAbB15f96b19388a259b6C438f",
+      "symbol": "USD₮",
+      "name": "Tether USD",
+      "decimals": 6,
+      "logoURI": "https://assets.coingecko.com/coins/images/325/large/Tether.png?1696501661",
+      "tags": ["stablecoin","ton-native"],
+      "extensions": {
+        "jetton": "EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs"
+      }
+    },
+    {
+      "chainId": 239,
+      "address": "0xD44F691aeD69fe43180B95b6F82f89c18Fb93094",
+      "symbol": "tsTON",
+      "name": "Tonstakers TON",
+      "decimals": 9,
+      "logoURI": "https://assets.coingecko.com/coins/images/35404/large/icon_%281%29.png?1708499119",
+      "tags": ["ton","ton-native", "yieldbearing"],
+      "extensions": {
+        "jetton": "EQC98_qAmNEptUtPc7W6xdHh_ZHrBUFpw5Ft_IzNU20QAJav"
+      }
+    },
+    {
+      "chainId": 239,
+      "address": "0x20512cF15E60242aB5237E0A76c873a338281397",
+      "symbol": "bmTON",
+      "name": "Bemo",
+      "decimals": 9,
+      "logoURI": "https://assets.coingecko.com/coins/images/55380/large/IMG_4061.jpeg?1745682979",
+      "tags": ["ton","ton-native", "yieldbearing"],
+      "extensions": {
+        "jetton": "EQCSxGZPHqa3TtnODgMan8CEM0jf6HpY-uon_NMeFgjKqkEY"
+      }
+    },
+    {
+      "chainId": 239,
+      "address": "0x27e4Ade13d78Aad45bea31D448f5504031e4871E",
+      "symbol": "WIF",
+      "name": "dogwifhat",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/33566/large/dogwifhat.jpg?1702499428",
+      "tags": ["tac-lz-bridged"],
+      "extensions": {
+        "jetton": "EQBMeWeS3MGYYRKGFnWpiLRCX9IKrRa-LvbBAr8z9vDxAZ97"
+      }
+    },
+    {
+      "chainId": 239,
+      "address": "0xecAc9C5F704e954931349Da37F60E39f515c11c1",
+      "symbol": "LBTC",
+      "name": "Lombard Staked Bitcoin",
+      "decimals": 8,
+      "logoURI": "https://assets.coingecko.com/coins/images/39969/large/LBTC_Logo.png?1724959872",
+      "tags": ["tac-lz-bridged", "btc", "yieldbearing"],
+      "extensions": {
+        "jetton": "EQBGpvzFLsoQKsJDCdXt4PBEFGj2uhSx_ERsYHkEk3KUqOQg"
+      }
+    },
+    {
+      "chainId": 239,
+      "address": "0x51A30E647D33A044967FA3DBb04d6ED6F45455F6",
+      "symbol": "USN",
+      "name": "USN",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/53948/large/Copy_of_USN.png?1748952392",
+      "tags": ["tac-hl-bridged", "stablecoin"],
+      "extensions": {
+        "jetton": "EQAdkcaiUMwAOcMzfW2m2mke3G4RdDkL4Dd4gfgsJNPxMwOD"
+      }
+    },
+    {
+      "chainId": 239,
+      "address": "0x5Ced7F73B76A555CCB372cc0F0137bEc5665F81E",
+      "symbol": "sUSN",
+      "name": "Staked USN",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/54924/large/sUSN_Logo.png?1742538935",
+      "tags": ["tac-hl-bridged", "stablecoin", "yieldbearing"],
+      "extensions": {
+        "jetton": "EQA4c6ShGataepF-sBnP_teO1tZcURcQBzyeVliV3i0LImZh"
+      }
+    },
+    {
+      "chainId": 239,
+      "address": "0x9bB6983Ca454320BD8691409690B4FCCD489EE96",
+      "symbol": "USD0",
+      "name": "Usual USD",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/38272/large/USD0LOGO.png?1716962811",
+      "tags": ["tac-lz-bridged", "stablecoin"],
+      "extensions": {
+        "jetton": "EQAzlv9Ljh39jguSBJw257nJMx40qg6Z2cjOrXEmIamjMm1m"
+      }
+    },
+    {
+      "chainId": 239,
+      "address": "0x1791BAff6a5e2F2A1340e8B7C1EA2B0c1E2DD1ea",
+      "symbol": "USD0++",
+      "name": "USD0 Liquid Bond",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/39169/large/0x35d8949372d46b7a3d5a56006ae77b215fc69bc0.png?1720798057",
+      "tags": ["tac-lz-bridged", "stablecoin", "yieldbearing"],
+      "extensions": {
+        "jetton": "EQDLLM06LS3S8R01zbmOuKZIfZxBixsv8bKXtIsQ8NYJmLsd"
+      }
+    },
+    {
+      "chainId": 239,
+      "address": "0xb1b385542B6E80F77B94393Ba8342c3Af699f15c",
+      "symbol": "USR",
+      "name": "Resolv USD",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/40008/large/USR_LOGO.png?1725222638",
+      "tags": ["tac-lz-bridged", "stablecoin"],
+      "extensions": {
+        "jetton": "EQAcY5ASRQdN1UmM9BMxYyNEfXB3ywcsQ4FkFT2DJdzvwyFx"
+      }
+    },
+    {
+      "chainId": 239,
+      "address": "0x35533f54740F1F1aA4179E57bA37039dfa16868B",
+      "symbol": "RLP",
+      "name": "Resolv Liquidity Provider Token",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/40017/large/orangeLogo..png?1725344586",
+      "tags": ["tac-lz-bridged", "stablecoin", "yieldbearing"],
+      "extensions": {
+        "jetton": "EQCjlNsHFSAStF2FWFF5oyxwKomAeiRDqkSd1cLMIEeQ1pvd"
+      }
+    },
+    {
+      "chainId": 239,
+      "address": "0x2a52B289bA68bBd02676640aA9F605700c9e5699",
+      "symbol": "wstUSR",
+      "name": "Wrapped Staked USR",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/51880/large/USR_LOGO.png?1732098841",
+      "tags": ["tac-lz-bridged", "stablecoin", "yieldbearing"],
+      "extensions": {
+        "jetton": "EQBqn2jmZ5LiDUG4mTs28uZsTsoZuTBT2O_6Sd4icJw9HTrr"
+      }
+    },
+    {
+      "chainId": 239,
+      "address": "0x08B8125aD72da5F6Cd6d6Af66360Ac08f5b78a48",
+      "symbol": "M-BTC",
+      "name": "Merlin's Seal BTC",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/36566/large/photo_2024-03-25_22-04-42.jpg?1711936162",
+      "tags": ["tac-lz-bridged", "btc"],
+      "extensions": {
+        "jetton": "EQCnYCNeUCKm066zIFCJKJHNeoonMtuNzaffL04XzGXkkHmE"
+      }
+    }
+  ]
+}
