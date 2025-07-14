@@ -47,7 +47,7 @@
   "tokens": [
     {
       "chainId": 239,
-      "address": "0x0000000000000000000000000000000000000000",
+      "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
       "symbol": "TAC",
       "name": "TAC Token",
       "decimals": 18,
