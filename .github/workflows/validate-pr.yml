@@ -25,8 +25,6 @@ jobs:
         
     - name: Setup pnpm
       uses: pnpm/action-setup@v4
-      with:
-        version: 9.15.9
         
     - name: Install dependencies
       run: pnpm install
@@ -51,8 +49,6 @@ jobs:
       if: always()
       with:
         script: |
-          const { context, github } = require('@actions/github');
-          
           const jobStatus = '${{ job.status }}';
           const runId = '${{ github.run_id }}';
           
