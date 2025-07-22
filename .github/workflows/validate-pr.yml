@@ -1,0 +1,90 @@
+name: Validate Token List PR
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'src/tokens/**'
+      - 'src/assets/**'
+      - 'schemas/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+        
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 9.15.9
+        
+    - name: Install dependencies
+      run: pnpm install
+      
+    - name: Validate JSON Schema
+      run: pnpm run validate:json
+      
+    - name: Validate Images
+      run: pnpm run validate:images
+      
+    - name: Validate On-chain Data
+      run: pnpm run validate:data
+      
+    - name: Run Linting
+      run: pnpm run lint
+      
+    - name: Run Type Checking
+      run: pnpm run check
+      
+    - name: Comment PR Status
+      uses: actions/github-script@v7
+      if: always()
+      with:
+        script: |
+          const { context, github } = require('@actions/github');
+          
+          const jobStatus = '${{ job.status }}';
+          const runId = '${{ github.run_id }}';
+          
+          let comment = '';
+          if (jobStatus === 'success') {
+            comment = `✅ **Token List Validation Passed**
+            
+            All validation checks have passed successfully:
+            - ✅ JSON Schema validation
+            - ✅ Image validation  
+            - ✅ On-chain data validation
+            - ✅ Code linting
+            - ✅ Type checking
+            
+            This PR is ready for review and merge.`;
+          } else {
+            comment = `❌ **Token List Validation Failed**
+            
+            One or more validation checks failed. Please review the [workflow logs](https://github.com/${{ github.repository }}/actions/runs/${runId}) and fix the issues:
+            
+            Common issues:
+            - Invalid token addresses or metadata
+            - Missing or incorrectly sized images
+            - On-chain data mismatch
+            - Linting or type errors
+            
+            Please update your PR and push the fixes.`;
+          }
+          
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: comment
+          });

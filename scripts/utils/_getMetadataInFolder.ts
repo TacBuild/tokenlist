@@ -9,9 +9,7 @@ import { isValidChainName } from "./_isValidChainName";
  * @returns Array of parsed metadata objects with chain, content, raw content, and file path
  * @throws Error if folder doesn't exist or contains invalid files
  */
-export function getMetadataInFolder<
-  T extends "tokens",
->(
+export function getMetadataInFolder<T extends "tokens">(
   folder: T,
 ): {
   chain: ValidChainName;

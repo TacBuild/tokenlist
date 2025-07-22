@@ -12,6 +12,6 @@ export const ALLOWED_NAME_AND_SYMBOL_PATCHES: Address[] = [
    * ==============
    */
 
-  // TOken Name
-  //"0x0000000[tokenaddress]",
+  // Native TAC token (special address that doesn't implement standard ERC-20)
+  "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
 ];

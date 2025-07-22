@@ -151,8 +151,12 @@ const validateAssetsImages = async () => {
       if (entry.isDirectory()) {
         // Recursively process subdirectories
         await processDirectory(fullPath);
-      } else if ([".DS_Store", "default.png"].includes(entry.name)) {
-        // Do nothing
+      } else if (
+        [".DS_Store", "default.png", "unknown+tac_logo.png"].includes(
+          entry.name,
+        )
+      ) {
+        // Do nothing - these are system/fallback files
       } else {
         // Check if file is an image
         const ext = path.extname(entry.name).toLowerCase();
@@ -167,7 +171,8 @@ const validateAssetsImages = async () => {
               !tokenRegex.test(
                 relativePath.replace(ext, "").replace("tokens/", ""),
               ) &&
-              !entry.name.includes("default")
+              !entry.name.includes("default") &&
+              entry.name !== "unknown+tac_logo.png"
             ) {
               errors.push(
                 `${relativePath}: Invalid file name! Must be a valid token address.`,
@@ -256,8 +261,7 @@ const validateMetadataImages = async () => {
   // Get all json files in all folders
   const jsonMetadata: {
     [key: string]: {
-      [key: string]:
-        | TokensFile["tokens"]
+      [key: string]: TokensFile["tokens"];
     };
   } = {};
   for (const folder of folders) {

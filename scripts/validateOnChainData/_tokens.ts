@@ -98,6 +98,11 @@ export async function validateTokens(
         return;
       }
 
+      // Skip on-chain validation for allowed patches (e.g., native tokens)
+      if (ALLOWED_NAME_AND_SYMBOL_PATCHES.includes(tokenAddress)) {
+        return;
+      }
+
       const [onChainName, onChainSymbol, onChainDecimals] = await Promise.all([
         publicClient.readContract({
           address: tokenAddress,
