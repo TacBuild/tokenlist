@@ -1,124 +1,79 @@
 # TAC Token List
 
-This repository contains the **canonical Token List** for TAC Mainnet (Chain ID: 239), providing standardized token metadata for wallets, DEXs, and other applications in the TAC ecosystem.
+Official token registry for TAC Mainnet (Chain ID: 239).
 
-## Quick Start
+## Usage
 
 ```bash
-# Install dependencies
 pnpm install
-
-# Validate token list
 pnpm validate
-
-# Run individual validations
-pnpm run validate:json     # Schema validation
-pnpm run validate:images   # Image validation
-pnpm run validate:data     # On-chain data validation
-
-# Linting and formatting
-pnpm run lint
-pnpm run check
-pnpm run format
 ```
 
-## Repository Structure
+## Adding a Token
 
-```
-├── src/
-│   ├── tokens/           # Token registry files
-│   │   └── tac.json     # TAC Mainnet token list
-│   ├── assets/          # Token logos and images
-│   │   └── tokens/      # Token logo files (1024x1024 PNG)
-│   └── types/           # TypeScript type definitions
-├── schemas/             # JSON schema validation
-├── scripts/             # Validation and utility scripts
-└── .github/workflows/   # GitHub Actions for PR validation
-```
+> Please read [contributing.md](CONTRIBUTING.md) for details on how to add a token
 
-## Features
+1. Fork this repository
+2. Add your token to `src/tokens/tac.json`
+3. Add a 1024x1024 PNG logo to `src/assets/tokens/[address].png` (optional)
+4. Run `pnpm validate` to check everything works
+5. Submit a pull request
 
-### Token Categories
+Pull requests are automatically validated. You'll get a comment with any issues to fix.
 
-- **TAC Native**: Native TAC ecosystem tokens with yield-bearing capabilities
-- **Cross-Chain Bridged**: Tokens bridged via LayerZero, HyperLane, and AggLayer
-- **TON Native**: TON blockchain native tokens wrapped as ERC-20
-- **Stablecoins**: USD-pegged stable assets (USDT, USN, USD0, USR)
-- **Bitcoin Derivatives**: Wrapped Bitcoin variants (cbBTC, LBTC, M-BTC)
-- **Ethereum Assets**: Wrapped ETH and liquid staking tokens (WETH, wstETH)
-
-### Cross-Chain Integration
-
-Tokens include bridge extensions for seamless cross-chain operations:
-
-- **TON Jettons**: Corresponding TON blockchain addresses
-- **LayerZero OFTs**: Omnichain Fungible Token adapters
-- **Bridge Adapters**: Ethereum and BSC bridge contract addresses
-
-### Automated Validation
-
-- **Schema Validation**: JSON structure and format validation
-- **Image Validation**: Logo format, size, and quality checks
-- **On-Chain Verification**: Contract address and metadata validation
-- **Cross-Reference Checks**: Bridge address verification
-
-## Contributing & Pull Requests
-
-### For Token Issuers
-
-1. **Fork** this repository
-2. **Add your token** to `src/tokens/tac.json`
-3. **Upload logo** to `src/assets/tokens/` (use contract address as filename)
-4. **Run validation** locally: `pnpm validate`
-5. **Submit Pull Request**
-
-### Automated PR Validation
-
-Every PR triggers automated validation that checks:
-
-- ✅ JSON schema compliance
-- ✅ Image format and size (1024x1024 PNG)
-- ✅ On-chain contract verification
-- ✅ Code quality and formatting
-- ✅ Cross-chain bridge data accuracy
-
-**Status Comments**: GitHub Actions automatically comments on PRs with validation results and actionable feedback.
-
-### Token Requirements
+## Token Format
 
 ```json
 {
   "chainId": 239,
   "address": "0x1234567890123456789012345678901234567890",
   "symbol": "TOKEN",
-  "name": "Example Token",
+  "name": "Token Name",
   "decimals": 18,
-  "logoURI": "https://approved-domain.com/logo.png",
-  "tags": ["tac-native", "yieldbearing"],
-  "extensions": {
-    "jetton": "TON_JETTON_ADDRESS",
-    "oftAdapterETH": "LAYERZERO_ADAPTER_ADDRESS"
-  }
+  "logoURI": "https://example.com/logo.png",
+  "tags": ["tag1", "tag2"]
 }
 ```
 
-**Required Fields:**
+### Required Fields
 
-- `chainId`: Must be `239` for TAC Mainnet
-- `address`: Valid ERC-20 contract address
-- `symbol`: Token ticker (2-10 characters)
-- `name`: Full token name
-- `decimals`: Token decimal places (0-18)
+- `chainId`: Must be `239`
+- `address`: Contract address
+- `symbol`: Token symbol
+- `name`: Token name
+- `decimals`: Number of decimals
 
-**Optional Extensions:**
+### Optional Fields
 
-- `jetton`: TON blockchain mirror address
-- `oftAdapterETH/BSC`: LayerZero bridge adapters
-- Custom bridge or protocol-specific addresses
+- `logoURI`: Link to token logo
+- `tags`: Array of category tags
+- `extensions`: Bridge addresses and other metadata
 
-### Logo Requirements
+## Validation
 
-- **Format**: PNG with solid background (no transparency)
-- **Size**: 1024x1024 pixels exactly
-- **Naming**: Use contract address (e.g., `0x1234...7890.png`)
-- **Quality**: High resolution, clear branding
+The validation checks:
+
+- JSON schema compliance
+- Contract exists onchain
+- Token metadata matches contract
+- Image format and size (if provided)
+- No duplicates
+
+## Repository Structure
+
+```
+├── src/tokens/tac.json     # Main token list
+├── src/assets/tokens/      # Token logos
+├── schemas/                # JSON schemas
+└── scripts/                # Validation scripts
+```
+
+## Development
+
+```bash
+pnpm run validate:json      # Schema validation
+pnpm run validate:images    # Image validation
+pnpm run validate:data      # Onchain validation
+pnpm run lint               # Code linting
+pnpm run check              # Type checking
+```
