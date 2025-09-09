@@ -273,6 +273,18 @@
       "extensions": {
         "jetton": "EQB7UZz_r1mBLZ_DwaHy-hDgKUFQbc_R6cVpignE4Efes5-R"
       }
+    },
+    {
+      "chainId": 239,
+      "address": "0x659CAbE7D88541f045faBD81c87F0f4B1510196C",
+      "symbol": "BLUM",
+      "name": "Blum",
+      "decimals": 9,
+      "logoURI": "https://assets.coingecko.com/coins/images/50864/large/blum.jpg?1729313098",
+      "tags": ["tac-lz-bridged"],
+      "extensions": {
+        "jetton": "EQCAj5oiRRrXokYsg_B-e0KG9xMwh5upr5I8HQzErm0_BLUM"
+      }
     }
   ]
 }
